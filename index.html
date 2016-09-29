@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Ansible to rule the World</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/theme/white.css">
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Ansible to rule the world</h1>
+                    <p>
+                        by Mikel Larreategi <br />
+                        <a href="https://twitter.com/erralin">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com/erral">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </p>
+
+
+                    <img data-src="img/codesyntax-logo.png" />
+                </section>
+
+                <section>
+                    <a href="https://www.codesyntax.com/eu"><img data-src="img/codesyntax-logo.png" /></a>
+                    <br />
+                    <img data-src="img/python-logo.png" /><br>
+                    <a href="http://zope.org"><img data-src="img/zope-logo.png" /></a><br>
+                    <a href="https://plone.org"><img data-src="img/plone-logo.png" /></a><br>
+                    <img data-src="img/django-logo-negative.png" /><br>
+
+                    <aside class="notes">
+                        Mikel Larreategi naiz, ezagutzen ez nauzuenontzat
+                        CodeSyntaxen egiten dut lan webguneak, intranetak eta
+                        web aplikazioak egiten, hasiera hasieratik (nik 2004tik
+                        eta enpresak 2001etik) python erabiliz horretarako.
+
+                        Gehien Plone izeneko edukiak kudeatzeko sistema
+                        erabiltzen dut, Zopen oinarritutako sistema ahaltsua
+                        baina Django ere gero eta gehiago egiten dut.
+
+                        Baina egia esateko Pythonen dabilen edozer ikutzeko
+                        gogoa eukitzen dugu, dela pyramid, dela ansible,
+                        dela edozer.
+                    </aside>
+
+                </section>
+
+
+                <section>
+                    <h1>Q & A?</h1>
+                    <img class="" data-src="img/life-of-brian-stoning.jpg" alt="" />
+                </section>
+
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
