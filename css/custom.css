@@ -8,9 +8,10 @@
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-    font-family: "Oswald", Helvetica, sans-serif;;
+    font-family: "Oswald", Helvetica, sans-serif;
 }
 
 .reveal img {
-    border: 0px !important
+    box-shadow: 0 !important;
+    border: 0 !important;
 }
