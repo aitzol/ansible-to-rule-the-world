@@ -15,3 +15,5 @@ In this talk I will explain how we use Ansible, how the server configuration is 
 View these slides at [https://erral.github.io/ansible-to-rule-the-world](https://erral.github.io/ansible-to-rule-the-world)
 
 ## License
+
+[CC-BY](LICENSE)
