@@ -51,10 +51,11 @@
                     <a href="http://zope.org"><img data-src="img/zope-logo.png" /></a><br>
                     <a href="https://plone.org"><img data-src="img/plone-logo.png" /></a><br>
                     <img data-src="img/django-logo-negative.png" /><br>
+                    <img data-src="img/pyramid.png" alt="" />
 
                     <aside class="notes">
                         I am Mikel Larreategi and I work at CodeSyntax.
-                        We do websites, intranets and other internet projects
+                        We make websites, intranets and other internet projects
                         and applications.
 
                         And since 2004, and also since the begining of our company,
@@ -95,17 +96,17 @@
                         at a spanish provider (Dinahosting), that provides an excelent service and
                         good prices.
                         <br/>
-                        But, as everything has a but, we had to start doing hosting services,
-                        so we needed to prepare ourselves the servers, provide backups, configure services, etc.
+                        But as everything has a but we had to start doing hosting services,
+                        so we needed to prepare the servers ourselves, provide backups, configure services, etc.
                         <br/>
                         We started collecting our procedures in a document, but we still needed to do
                         a lot of things manually.
                         <br/>
                         We could have gone to a cloud provider, but we didn't find any which was a real
-                        good value for money. And no, the pricing system of Amazon AWS was crazy as itself...
+                        good value for money. And no, the pricing system of Amazon AWS was crazy itself...
                         We had many small clients, not one big project, so it wasnt' easy for us.
                         <br/>
-                        But, after some incidents with our Backups, and some possible problems with the
+                        But after some incidents with our Backups, and some possible problems with the
                         physical components of the servers, our system administrator was not confident enough
                         to follow the bare-metal path, so we started looking for some cloud services; and found
                         DigitalOcean, which offers well-priced cloud servers based on SSD disks, so we started
@@ -144,7 +145,7 @@
                         <br>
                         Everything!
                         <br>
-                        Yes, everything, but it's easier to say it that to do it.
+                        Yes, everything, but it's easier said than done.
 
                     </aside>
 
@@ -283,7 +284,7 @@
                     <h1>Extending ansible: <a href="https://galaxy.ansible.com/"></a>Ansible galaxy</h1>
                     <ul>
                         <li>pypi for ansible</li>
-                        <li>Roles to almost everything: package configuration, application deployment, swap files, exim configuration, ...</li>
+                        <li>Roles for almost anything: package configuration, application deployment, swap files, exim configuration, ...</li>
                     </ul>
                     <aside class="notes">
                         We found a lot of useful roles (or scripts) in Ansible Galaxy, they are installed
@@ -350,6 +351,28 @@
                     </aside>
                 </section>
                 <section>
+                    <h1>(small) problems</h1>
+                    <ul>
+                        <li>Server specific setups</li>
+                        <li>Different firewall rules</li>
+                        <li>Domain-dependant mailserver configuration</li>
+                        <li>Project specific requirements</li>
+
+                    </ul>
+                    <aside class="notes">
+                        We also faced some problems, where we needed to keep some specific configuration
+                        in a given server. <br/>
+                        At first we faced the firewall issue, and we fixed it writing a
+                        "file exists check" (if there is a specific-named file, upload it; otherwise
+                        upload the generic one).<br/>
+                        To fix mail-server configuration, we wrote a role that makes a DNS check
+                        and writes a configuration file<br/>
+                        Although you try to deploy equal servers, you will always have, at least
+                        in our kind of projects and clients, different configurations<br/>
+                        You have to live with it.
+                    </aside>
+                </section>
+                <section>
                     <h1>Current status</h1>
                     <p>
                         <ul>
@@ -366,6 +389,7 @@
                             <li>Automate Plone hotfix installing</li>
                             <li>Automate django deployments</li>
                             <li>Automate nginx configuration</li>
+                            <li class="fragment">Autocontained projects: server setup + application deployment</li>
                         </ul>
                     </p>
                 </section>
