@@ -31,16 +31,17 @@
                     <p>
                         by Mikel Larreategi <br />
                         <a href="https://twitter.com/erralin">
-                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-twitter fa-2x"></i>
                         </a>
                         <a href="https://github.com/erral">
-                            <i class="fa fa-github"></i>
+                            <i class="fa fa-github fa-2x"></i>
                         </a>
                     </p>
 
-
-                    <a href="https://www.codesyntax.com"><img data-src="img/codesyntax-logo.png" /></a><br/>
-                    <a href="https://pyss16.pyss.org"><img data-src="img/pyss16-logo2016.png" width="400px"/></a>
+                    <p>
+                        <a href="https://www.codesyntax.com"><img  data-src="img/codesyntax-logo.png" /></a><br>
+                        <a href="https://pyss16.pyss.org"><img data-src="img/pyss16-logo2016.png" width="400px"/></a>
+                    </p>
                 </section>
 
                 <section>
@@ -52,25 +53,325 @@
                     <img data-src="img/django-logo-negative.png" /><br>
 
                     <aside class="notes">
-                        Mikel Larreategi naiz, ezagutzen ez nauzuenontzat
-                        CodeSyntaxen egiten dut lan webguneak, intranetak eta
-                        web aplikazioak egiten, hasiera hasieratik (nik 2004tik
-                        eta enpresak 2001etik) python erabiliz horretarako.
+                        I am Mikel Larreategi and I work at CodeSyntax.
+                        We do websites, intranets and other internet projects
+                        and applications.
 
-                        Gehien Plone izeneko edukiak kudeatzeko sistema
-                        erabiltzen dut, Zopen oinarritutako sistema ahaltsua
-                        baina Django ere gero eta gehiago egiten dut.
+                        And since 2004, and also since the begining of our company,
+                        we have done everything in Python.
 
-                        Baina egia esateko Pythonen dabilen edozer ikutzeko
-                        gogoa eukitzen dugu, dela pyramid, dela ansible,
-                        dela edozer.
+                        I use mostly Plone, a CMS based on Zope, but I also do
+                        django and pyramid, and we also do many other things
+                        in python for other needs.
                     </aside>
 
                 </section>
 
+                <section>
+                    <h1>Our background</h1>
+                    <ul>
+                        <li class="fragment">2001 ~ 2005: 3 shared servers</li>
+                        <li class="fragment">2005 ~ 2009: n VPS</li>
+                        <li class="fragment">2009 ~ today: m physical servers (20 < m < 30)</li>
+                        <li class="fragment">today ~ :  &infin; cloud servers</li>
+                    </ul>
+                    <aside class="notes">
+                        When we started, we had an agreement with a local hosting company
+                        and we had there 3 servers where we could install our application (
+                        they were plain Zope applications), but we had no sysadmins on our team, our
+                        clients bought the hosting service directly, we just deployed the application.
+                        <br/>
+                        But our needs grew and we had to find something else. We found a US company
+                        called Zettai (later HighSpeedRails), that provided FreeBSD based VPSs
+                        where we started deploying the applications (we have already started
+                        selling Plone sites, but they were also Zope sites). The provider was
+                        specialized in providing hosting for python/zope/plone applications
+                        so, we did not have to worry about the low-level things.
+                        <br/>
+                        But the company closed on 2009, and for at that time we started to think
+                        about providing us directly the hosting service to our clients.
+                        <br/>
+                        We started looking around, and started buying physical bare-metal servers
+                        at a spanish provider (Dinahosting), that provides an excelent service and
+                        good prices.
+                        <br/>
+                        But, as everything has a but, we had to start doing hosting services,
+                        so we needed to prepare ourselves the servers, provide backups, configure services, etc.
+                        <br/>
+                        We started collecting our procedures in a document, but we still needed to do
+                        a lot of things manually.
+                        <br/>
+                        We could have gone to a cloud provider, but we didn't find any which was a real
+                        good value for money. And no, the pricing system of Amazon AWS was crazy as itself...
+                        We had many small clients, not one big project, so it wasnt' easy for us.
+                        <br/>
+                        But, after some incidents with our Backups, and some possible problems with the
+                        physical components of the servers, our system administrator was not confident enough
+                        to follow the bare-metal path, so we started looking for some cloud services; and found
+                        DigitalOcean, which offers well-priced cloud servers based on SSD disks, so we started
+                        migrating our bare-metal servers to DigitalOcean
+
+                    </aside>
+
+                </section>
 
                 <section>
-                    <h1>Q & A?</h1>
+                    <h1>But...</h1>
+                    <p>
+                        This was meant to be a nightmare
+                    </p>
+                    <img data-src="img/moss-fire.gif" src="" alt="" width="725px" height="483px"/>
+                    <aside class="notes">
+                        In a fast count, we had a lot of clients, so from having +20 servers, we were
+                        going to have more than 60 servers.
+
+                        We needed a way to automate, not only the provisioning of the servers but also
+                        the configuration changes (firewall rule updates, ssh keys, system updates, ...).
+
+                        Just a month or two before we started to migrate, we had to update
+                        the ssh keys of a colleague on our servers, and we realized that we
+                        needed to automate it.
+                    </aside>
+                </section>
+
+                <section>
+                    <p>Automate, ok...</p>
+                    <p>but <strong>WHAT</strong> to automate?</p>
+                    <img data-src="img/automate-everything.jpg" class="fragment" alt="" />
+
+                    <aside class="notes">
+                        So Ok, but what did we need to automate?
+                        <br>
+                        Everything!
+                        <br>
+                        Yes, everything, but it's easier to say it that to do it.
+
+                    </aside>
+
+                </section>
+
+                <section>
+                    <h1>Application deployment</h1>
+                    <p>
+                        zc.buildout, fabric, ...
+                    </p>
+                    <p class="fragment">
+                        <i class="fa fa-check" aria-hidden="true"></i> Already achieved
+                    </p>
+                    <aside class="notes">
+                        OK, we had the part of application deployment, somehow automated
+                        we are using buildout in almost all of our projects, and fabric in
+                        some of them to provide a repeatable environment to our applications
+                        <br>
+                        For those who don't know buildout, zc.buildout is a python tool to
+                        deploy all kind of applications, based on a configuration file and
+                        some python scripts called recipes.
+                        <br>
+                        Is somehow similar to docker, but it is not a Operating System Level
+                        application.
+                    </aside>
+
+                </section>
+
+                <section>
+                    <h1>Our needs</h1>
+                    <p>
+                        <ol>
+                            <li>Server provisioning</li>
+                            <li class="fragment">Configuration update/change</li>
+                        </ol>
+                    </p>
+                    <aside class="notes">
+                        So we clearly had 2 needs and we needed a tool to address that.
+                        <br>
+                        We started with fabric, which provides a way to execute commands in a remote
+                        server, even in parallel, and it's written in python.
+                        <br>
+                        We made a fabric script to provision a server and we used it even with some bare-metal
+                        server, but we found some issues and glitches. We needed to write
+                        the scripts quite defensively, with a lot of error-controls, because
+                        we didn't what to re-execute things that were already done...
+                        <br>
+                        So we needed an easier thing.
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>Ansible to the rescue</h1>
+                    <p style="background-color: black;">
+                        <img data-src="img/ANSI_logotype_web_white2x.png" alt="" />
+
+                    </p>
+                    <aside class="notes">
+                        So, after some research, we found Ansible
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>Ansible</h1>
+                    <blockquote cite="https://www.ansible.com/how-ansible-works">
+                        <p>
+                            Ansible is a radically simple IT automation engine that automates cloud provisioning, configuration management, application deployment, intra-service orchestration, and many other IT needs.
+                        </p>
+                    </blockquote>
+                    <aside class="notes">
+                        But what is ansible?
+
+                        The definition says everything
+                    </aside>
+                </section>
+                <section>
+                    <h1>Ansible</h1>
+                    <p>
+                        <ul>
+                            <li>Write a YAML file</li>
+                            <li>Run it</li>
+                            <li>Everything done</li>
+                        </ul>
+                    </p>
+                    <aside class="notes">
+                        OK, let's explain it easily:<br/>
+                        You write a configuration file with the configuration that
+                        you want to have in a server.
+                        You run it.
+                        And ansible takes care of installing, putting files, or doing
+                        whatever it needs to have the server in the final state
+                        you wrote in the file.
+                        <br>
+                        It was somehow quite similar to zc.buildout that we are already
+                        using.
+                    </aside>
+                </section>
+                <section data-background-image="img/south-park-applause.gif">
+                    <aside class="notes">
+                        So everything done...
+                    </aside>
+                </section>
+                <section>
+                    <h1>Ansible example</h1>
+                    <pre><code data-trim data-noescape>
+---
+- hosts: all
+  tasks:
+    - name: Add user csmant
+      user: name=mikel state=present shell=/bin/bash
+
+    - name: Ensure additional packages via apt
+      apt: pkg=nginx state=present
+
+                    </code>
+                </pre>
+                <aside class="notes">
+                    This is a configuration file for ansible. <br>
+                    It does just 2 things:<br>
+                    Create/verify if there is a user called 'mikel' with '/bin/bash' as login shell <br>
+                    Ensure that nginx is installed                   <br>
+                    You only need to provide the "destination state" of the server and the "roles" (scripts)
+                    that ansible provides ensure that your requirements are fulfilled.
+                </aside>
+                </section>
+
+                <section data-background-image="img/ktpng.gif">
+                    <aside class="notes">
+                        OK, so we rewrote our "procedure document" for ansible
+                        and started using both roles provided by ansible and also
+                        some other "external roles"
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>Extending ansible: <a href="https://galaxy.ansible.com/"></a>Ansible galaxy</h1>
+                    <ul>
+                        <li>pypi for ansible</li>
+                        <li>Roles to almost everything: package configuration, application deployment, swap files, exim configuration, ...</li>
+                    </ul>
+                    <aside class="notes">
+                        We found a lot of useful roles (or scripts) in Ansible Galaxy, they are installed
+                        as dependencies with a tool like pip, and are directly available for your scripts.
+                    </aside>
+                </section>
+                <section>
+                    <h1>Our ansible</h1>
+                    <p>
+                        We ended having 5 main configuration files for our servers:
+                        <ul>
+                            <li>Common setup</li>
+                            <li>Setup for Plone project</li>
+                            <li>Setup for Django projects (Common + Mysql)</li>
+                            <li>Setup for WordPress projects (Common - nginx + Apache + PHP + Mysql)</li>
+                            <li>apt package update (we use Debian)</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h1>Our first time</h1>
+                    <p>
+                        <ul>
+                            <li>After some tests, we run it on production</li>
+                            <li class="fragment">4 servers, with special firewall rules</li>
+                            <li class="fragment">10 server with old ssh keys</li>
+                            <li class="fragment">N incorrect configured exim mail servers</li>
+                        </ul>
+                    </p>
+                    <aside class="notes">
+                        We made some tests with some servers, and after that we
+                        run it on production, and we found a lot of issues on our servers.
+                        <br>
+                        Yes, you can say that we were not careful enough to take care of
+                        our servers, but we are specialized on writing applications, not
+                        doing sysadmin work, so it was not a surprise for us to found those issues,
+                        <br>
+                        After that first run, we fixed all servers, and improved our roles using
+                        variables to upload configuration-dependant-firewall rules and some other
+                        things to our ansible files.
+                    </aside>
+                </section>
+                <section>
+                    <h1>Dynamic inventories</h1>
+                    <p>
+                        <ul>
+                            <li>Dynamic list of hosts</li>
+                            <li>No need to keep a stone-writen list of hosts</li>
+                            <li class="fragment">Everything automated</li>
+                        </ul>
+                    </p>
+                    <aside class="notes">
+                        One of the drawbacks of ansible is that we need to keep an updated
+                        "hosts" file, that says which are our servers.<br>
+                        Fortunately, ansible has an option to use the so called "dynamic
+                        inventories" that are no more than python scripts which provide
+                        ansible the list of hosts where it needs to run things.<br/>
+                        For instance we have a script that connects to Digital Oceans' API
+                        and gets the IP addresses of our servers, so we do not need to keep
+                        un updated-everyday-growing list of servers.<br/>
+                        It is just a python script, so you can do it for whichever provider you use
+                        (there are premade scripts for mayor Cloud providers)<br>
+                        So we even get one step ahead: we even automated the list of servers.
+                    </aside>
+                </section>
+                <section>
+                    <h1>Current status</h1>
+                    <p>
+                        <ul>
+                            <li>We create all our servers using Ansible</li>
+                            <li>We regularly run Ansible to ensure that nobody has changed the configuration</li>
+                            <li>We keep updating our Ansible config file to address a few glitches</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h1>Future developments</h1>
+                    <p>
+                        <ul>
+                            <li>Automate Plone hotfix installing</li>
+                            <li>Automate django deployments</li>
+                            <li>Automate nginx configuration</li>
+                        </ul>
+                    </p>
+                </section>
+
+                <section>
+                    <h1>Q & A</h1>
                     <img class="" data-src="img/life-of-brian-stoning.jpg" alt="" />
                 </section>
 
