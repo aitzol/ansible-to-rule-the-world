@@ -253,8 +253,9 @@
                     <aside class="notes">
                         OK, let's explain it easily:<br/>
                         You write a configuration file with the configuration that
-                        you want to have in a server.
-                        You run it.
+                        you want to have in a server. YAML is a commonly used data serialization language
+                        ususally used for configuration file
+                        You run it passing this file to the ansible engine
                         And ansible takes care of installing, putting files, or doing
                         whatever it needs to have the server in the final state
                         you wrote in the file.
@@ -297,6 +298,8 @@
                         OK, so we rewrote our "procedure document" for ansible
                         and started using both roles provided by ansible and also
                         some other "external roles"
+                        <br />
+                        Run demo
                     </aside>
                 </section>
 
@@ -312,7 +315,7 @@
                     </aside>
                 </section>
                 <section>
-                    <h1>Our ansible</h1>
+                    <h1>Our ansible setup</h1>
                     <p>
                         We ended having 5 main configuration files for our servers:
                         <ul>
@@ -371,7 +374,17 @@
                     </aside>
                 </section>
                 <section>
-                    <h1>(small) problems</h1>
+                    <h1>Current status</h1>
+                    <p>
+                        <ul>
+                            <li>We create all our servers using Ansible</li>
+                            <li>We regularly run Ansible to ensure that nobody has changed the configuration</li>
+                            <li>We keep updating our Ansible config file to address a few glitches</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h1>(small) Problems</h1>
                     <ul>
                         <li>Server specific setups</li>
                         <li>Different firewall rules</li>
@@ -386,22 +399,13 @@
                         "file exists check" (if there is a specific-named file, upload it; otherwise
                         upload the generic one).<br/>
                         To fix mail-server configuration, we wrote a role that makes a DNS check
-                        and writes a configuration file<br/>
+                        and writes a configuration file THIS IS PYTHON!!<br/>
                         Although you try to deploy equal servers, you will always have, at least
                         in our kind of projects and clients, different configurations<br/>
                         You have to live with it.
                     </aside>
                 </section>
-                <section>
-                    <h1>Current status</h1>
-                    <p>
-                        <ul>
-                            <li>We create all our servers using Ansible</li>
-                            <li>We regularly run Ansible to ensure that nobody has changed the configuration</li>
-                            <li>We keep updating our Ansible config file to address a few glitches</li>
-                        </ul>
-                    </p>
-                </section>
+
                 <section>
                     <h1>Future developments</h1>
                     <p>
@@ -409,7 +413,7 @@
                             <li>Automate Plone hotfix installing</li>
                             <li>Automate django deployments</li>
                             <li>Automate nginx configuration</li>
-                            <li class="fragment">Autocontained projects: server setup + application deployment</li>
+                            <li class="fragment">Autocontained projects: server setup + application deployment (DevOps culture)</li>
                         </ul>
                     </p>
                 </section>
