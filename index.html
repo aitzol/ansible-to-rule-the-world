@@ -53,22 +53,23 @@
                     <img data-src="img/pyramid.png" alt="" />
 
                     <aside class="notes">
-                        I am Mikel Larreategi and I work at CodeSyntax.
-                        We make websites, intranets and other internet projects
-                        and applications.
+                      Erralen aurkezpenari erreferntzia eta aitorpena
+                      CodeSyntax
+                      Webgune, intranet eta bestelako internet aplikazioak egiten ditug
+                      gehienbat.
 
-                        And since 2004, and also since the begining of our company,
-                        we have done everything in Python.
+                      Enpresa 2004an sortu zenetik gure lan ia guztia Pythonekin egiten
+                      dugu.
 
-                        I use mostly Plone, a CMS based on Zope, but I also do
-                        django and pyramid, and we also do many other things
-                        in python for other needs.
+                      Neronik hasiera batean Pythonen oinarritutako Zope aplikazio
+                      zerbitzariarekin lan egiten nuen. Web garapen gehiena Djangorekin
+                      egiten dut. Horretaz gain sistemen kudeaketaz arduratzen naiz.
                     </aside>
 
                 </section>
 
                 <section>
-                    <h1>Our background</h1>
+                    <h1>Our systems background</h1>
                     <ul>
                         <li class="fragment">2001 ~ 2005: 3 shared servers</li>
                         <li class="fragment">2005 ~ 2009: n VPS</li>
@@ -76,41 +77,50 @@
                         <li class="fragment">today ~ :  &infin; cloud servers</li>
                     </ul>
                     <aside class="notes">
-                        When we started, we had an agreement with a local hosting company
-                        and we had there 3 servers where we could install our application (
-                        they were plain Zope applications), but we had no sysadmins on our team, our
-                        clients bought the hosting service directly, we just deployed the application.
-                        <br/>
-                        But our needs grew and we had to find something else. We found a US company
-                        called Zettai (later HighSpeedRails), that provided FreeBSD based VPSs
-                        where we started deploying the applications (we have already started
-                        selling Plone sites, but they were also Zope sites). The provider was
-                        specialized in providing hosting for python/zope/plone applications
-                        so, we did not have to worry about the low-level things.
-                        <br/>
-                        But the company closed on 2009, and for at that time we started to think
-                        about providing us directly the hosting service to our clients.
-                        <br/>
-                        We started looking around, and started buying physical bare-metal servers
-                        at a spanish provider (Dinahosting), that provides an excelent service and
-                        good prices.
-                        <br/>
-                        But as everything has a but we had to start doing hosting services,
-                        so we needed to prepare the servers ourselves, provide backups, configure services, etc.
-                        <br/>
-                        We started collecting our procedures in a document, but we still needed to do
-                        a lot of things manually.
-                        <br/>
-                        We could have gone to a cloud provider, but we didn't find any which was a real
-                        good value for money. And no, the pricing system of Amazon AWS was crazy itself...
-                        We had many small clients, not one big project, so it wasnt' easy for us.
-                        <br/>
-                        But after some incidents with our Backups, and some possible problems with the
-                        physical components of the servers, our system administrator was not confident enough
-                        to follow the bare-metal path, so we started looking for some cloud services; and found
-                        DigitalOcean, which offers well-priced cloud servers based on SSD disks, so we started
-                        migrating our bare-metal servers to DigitalOcean
-
+                      Hasiera batean gertuko hosting enpresa batekin akordioa genuen.
+                      3 zerbitzari asignatu ziguten eta guk bertan zope aplikazioak jartzen genituen
+                      Garai horretan ez genuen sysadmin lanik egiten. Bezeroek hostina kontratatzen zuten,
+                      eta guk aplikazioa online jarri
+                      <br/>
+                      Gure beharrak handitu ahala eredu hau motz geratu zitzaigun (fakturazioan deskontrola,
+                      instalazioak isolatzeko lanak,...)
+                      Beste zerbaiten bila hasi eta Zettai (beranduago HighSpeedRails) izeneko EEBBtako
+                      enpresa bat aurkitu genuen. FreeBSDn oinarrtutako VPSak eskaintzen zizkiguten. VPS
+                      hauetan aurrekonfiguratutako Zope instantzia bat ematen ziguten, eta guk bertan
+                      sareratzen genituen gure garapenak. Garai horretan dagoeneko Plone garatzen hasiak ginen.
+                      Python/Zope/Plone hostatzeak eskaintzen espezializatutako hornitzaile bat, garapenaz
+                      besterik ez ginen arduratu behar BAPO!!
+                      <br/>
+                      Pozik ginen, baina 2009an HSReko burua negozio horretaz aspertu eta enpresa itxiko
+                      zuela iragarri zuen.
+                      <br/>
+                      Momentu horretan ez geneukan antzerako alternatibarik eta gure bezeroei hostina guk
+                      ekaintzea erabaki genuen.
+                      <br/>
+                      Honetarako zerbitzari fisikoak erosten hasi ginen Dinahosting enpresa Galiziarrean. Oraindik
+                      zerbitzari birtualak eta antzerako enparauak ez ziren gaur beste ikusten, eta VPS askotan
+                      gure stack-a instalatzeko arazoak aurkitzen genituen.
+                      <br/>
+                      Eta naiz eta ez izan gure lan ildo nagusia hosting enpresa batek egiten dituen lanak egiten
+                      hasi behar izan ginen: zerbitzariak prestatu, segurtasun kopiak, zerbitzu konfigurazioak,...
+                      <br/>
+                      Google docs batean instalazio prozedurak dokumentatzen hasi ginen, baina guztia eskuz egiten
+                      genuen. Esku lan honek ezagutuko dituzuen arazoak dauzka, erroreak egiteko aukera handia,
+                      arazoren baten aurrean oso mugimendu aukera murritzak, toki askotan egin beharreko lan
+                      errepikakorretan zerbait egin gabe geratzeko aukera...
+                      <br/>
+                      zerbitzari fisikoak momentu konkretu batean hartu beharreko erabakia izan ziren, baina bare-metalak
+                      baditu arazoak eta beti egon izan gara beste ereduei begira. Cloud ereduei gehienbat.
+                      Dena dela, ekonomikoki alternatibarik ez genuen aurkitzen, bezero txiki asko dauzkagu (ez
+                      proiektu erraldoi bat) eta horrelako kasuetan amazonen AWSren prezioek adibidez, bataz
+                      beste zerbitzari dedikatu batean eskaini genezakeena bikoizten zuten (AWSko kalkuluak ondo
+                      egin ezkero behintzat, ze nahiko lan...)
+                      <br/>
+                      Backup eta zerbitzarietako HW arazo batzuen ondoren, ni ez nengoen gustora zerbitzari fisikoekin.
+                      Eta beste hornitzaile batzuk frogatzeari ekn genion, eta frogatu genituenen artean
+                      DigitalOcean izan zen gehien gustatu zitzaiguna, prezio onean eta guretzako eskala egokian
+                      eskaintzen zizkiguten SSD diskodun zerbitzariak. Hortaz pasa den urte hasieran edo oraindik
+                      martxan den migrazioa hasi genuen.
                     </aside>
 
                 </section>
@@ -122,15 +132,18 @@
                     </p>
                     <img data-src="img/moss-fire.gif" src="" alt="" width="725px" height="483px"/>
                     <aside class="notes">
-                        In a fast count, we had a lot of clients, so from having +20 servers, we were
-                        going to have more than 60 servers.
+                      Motzean esanda
+                      - bezero asko dauzkagu
+                      - +/- guk partizionatutako 30 zerbitzari izatera heldu gara
+                      - Migrazioa bukatzean bezero bakotzak bere zerbitzaritxoa izango du
 
-                        We needed a way to automate, not only the provisioning of the servers but also
-                        the configuration changes (firewall rule updates, ssh keys, system updates, ...).
+                      Egoera honetan ezinezkoa da eskuz aritzea zerbitzariak prestatzen. Automatizazioa derrigorrezkoa
+                      da, ez bakarrik instalazioan,baita ere konfigurazioetan (ssh gakoak, sistema eguneraketak,
+                      prozesu berrien ezarpenak...)
 
-                        Just a month or two before we started to migrate, we had to update
-                        the ssh keys of a colleague on our servers, and we realized that we
-                        needed to automate it.
+                      ADB, migrazio honekin hasi baino lehen lankide baten ssh gakoa eguneratu beharra izan
+                      genuen, eta zerbitzariz zerbitzari, banan banan egin behar izan genuen.
+                      Prozesuak automatizatu behar genituela argi zegoen.
                     </aside>
                 </section>
 
@@ -159,16 +172,19 @@
                         <i class="fa fa-check" aria-hidden="true"></i> Already achieved
                     </p>
                     <aside class="notes">
-                        OK, we had the part of application deployment, somehow automated
-                        we are using buildout in almost all of our projects, and fabric in
-                        some of them to provide a repeatable environment to our applications
-                        <br>
-                        For those who don't know buildout, zc.buildout is a python tool to
-                        deploy all kind of applications, based on a configuration file and
-                        some python scripts called recipes.
-                        <br>
-                        Is somehow similar to docker, but it is not a Operating System Level
-                        application.
+                      Gure garapenen sareratze automatizazioa nahiko landua geneukan dagoeneko.
+                      Buildout izeneko tresna bat erabiltzen dugu gure proiektu guztietan,
+                      honetaz gain zenbait kasu konkretuetan fabric ere erabili izan dugu.
+                      Tresna hauekin proiektuaren ingurune errepikakorrak lortzen ditugu
+                      (kode bertsioak, instalzio path-ak, ...)
+                      <br />
+                      Ezagutzen ez duzuenontzako zc.buildout edozein motako aplikazioren instalzioa
+                      automatizatzeko tresna da. Konfigurazioa fitxategi orokor batean eta
+                      errezeta deitzen diren python script-etabn oinarritzen da. 
+                      Pycones 2014 aurkezpena
+                      <br />
+                      fabric aldiz sistema mailako lanak burutzeko python liburutegia da.
+                      Nolabait biak lan berdinetarako erabil daitezke, guk bien konbinazio bat darabilgu
                     </aside>
 
                 </section>
@@ -203,7 +219,9 @@
 
                     </p>
                     <aside class="notes">
-                        So, after some research, we found Ansible
+                      Aurreko bi tresnak ez dira arduratzen sistemaren konfigurazio orokorraz,
+                      Honetarako beste zerbait behar genuen, eta bizpairu froga egin ondoren
+                      Ansiblerekin geratu gara.
                     </aside>
                 </section>
 
