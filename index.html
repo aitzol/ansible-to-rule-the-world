@@ -271,8 +271,8 @@
 ---
 - hosts: all
   tasks:
-    - name: Add user csmant
-      user: name=mikel state=present shell=/bin/bash
+    - name: Add user setlem
+      user: name=setlem state=present shell=/bin/bash
 
     - name: Ensure additional packages via apt
       apt: pkg=nginx state=present
